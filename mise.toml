@@ -1,0 +1,30 @@
+[tools]
+python = "3.12.12"
+trunk = "1.3.4"
+
+[tasks."install:python"]
+run = "pip install -r requirements.txt && pip install pytest"
+
+[tasks.install]
+depends = ["install:*"]
+
+[tasks."test:python"]
+run = "pytest"
+
+[tasks.test]
+depends = ["test:*"]
+
+[tasks.lint]
+run = "trunk check"
+
+[tasks.fmt]
+run = "trunk fmt"
+
+[tasks."codegen:noop"]
+run = "echo 'No codegen'"
+
+[tasks.codegen]
+depends = ["codegen:*"]
+
+[tasks.ci]
+depends = ["lint", "test"]
