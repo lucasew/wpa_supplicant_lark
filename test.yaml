@@ -1,0 +1,7 @@
+name: Test
+jobs:
+  test:
+    steps:
+      - uses: action
+        with:
+          key: "chore: update"

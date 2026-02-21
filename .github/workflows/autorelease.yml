@@ -43,10 +43,12 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update generated code" # yamllint disable-line rule:quoted-strings
-          title: "chore: update generated code" # yamllint disable-line rule:quoted-strings
-          body: "This PR updates generated code."
-          branch: "chore/codegen-update"
+          commit-message: >-
+            chore: update generated code
+          title: >-
+            chore: update generated code
+          body: This PR updates generated code.
+          branch: chore/codegen-update
 
       - name: CI
         run: mise run ci
