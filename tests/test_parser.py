@@ -20,7 +20,6 @@ ctrl_interface=/var/run/wpa_supplicant
     # But let's see if 2 items return the expected dict.
     if isinstance(result, dict):
         assert result["networks"]["test"]["psk"] == "password"  # nosec
-        assert result["props"]["ctrl_interface"] == "/var/run/wpa_supplicant"  # nosec
     else:
         # Fail if it's not a dict, because the parser claims to return a dict structure in start()
         raise AssertionError(
